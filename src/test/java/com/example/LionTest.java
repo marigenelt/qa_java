@@ -38,7 +38,6 @@ public class LionTest {
         };
     }
 
-
     @Test
     public void getKittens() {
         int expectedKittensAmount = 1;
@@ -46,12 +45,16 @@ public class LionTest {
         assertEquals(expectedKittensAmount, lion.getKittens());
     }
 
-
     @Test
-    public void doesHaveMane() {
+    public void lionDoesHaveMane_WhenMale() {
         if ("Самец".equals(sex)) {
             assertTrue("У самца есть грива", lion.doesHaveMane());
-        } else if ("Самка".equals(sex)) {
+        }
+    }
+
+    @Test
+    public void lionDoesNotHaveMane_WhenFemale() {
+        if ("Самка".equals(sex)) {
             assertFalse("У самки нет гривы", lion.doesHaveMane());
         }
     }
@@ -68,6 +71,4 @@ public class LionTest {
         lion.getFood();
         verify(feline, times(1)).getFood("Хищник");
     }
-
-
 }

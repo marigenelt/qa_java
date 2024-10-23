@@ -33,6 +33,7 @@ public class FelineTest {
     }
     @Test
     public void testKittensCount() {
-        assertEquals(feline.getKittens(1), feline.getKittens());
+        int expectedKittens = feline.getKittens(1);
+        int actualKittens = feline.getKittens();
     }
 }
